@@ -66,7 +66,7 @@ public class GroupeEtudiantService {
 	        etu.setGroupe(g);
 	        er.save(etu);
 	        
-			ger.deleteGEByEtudiant(e);
+			//ger.deleteGEByEtudiant(e);
 			
 		}
 		

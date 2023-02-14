@@ -13,7 +13,9 @@ import javax.persistence.*;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "role")
 @JsonSubTypes({
         @JsonSubTypes.Type(value = Etudiant.class, name = "ETUDIANT"),
-        @JsonSubTypes.Type(value = Encadrant.class, name = "ENCADRANT")
+        @JsonSubTypes.Type(value = Encadrant.class, name = "ENCADRANT"),
+        @JsonSubTypes.Type(value = Admin.class, name = "ADMIN")
+
 })
 public class Users {
 

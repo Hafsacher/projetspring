@@ -34,7 +34,6 @@ public class Groupe {
     @JoinColumn(name = "sujet_id")
     //@JsonBackReference
     Sujet sujet;
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "groupe")
     @JsonIgnore
     List<GroupeEtudiant> groupeEtudiant;

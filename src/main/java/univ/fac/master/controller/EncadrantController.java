@@ -66,10 +66,6 @@ public class EncadrantController {
 	public Encadrant getEncadrantByEmail(@PathVariable String email){
 		return es.getEncadrantByEmail(email);
 	}
-
-    
-  
-	
 	@GetMapping("/encadrants")
 	public String listEncadrants(Model model) {
 		List<Encadrant> listEncadrants = er.findAll();
