@@ -36,15 +36,14 @@ public class RendezvousService {
     public void demanderendezvous(Rendezvous rendezvous, String siteURL)
             throws MessagingException, UnsupportedEncodingException {
         String toAddress = rendezvous.getGroupe().getSujet().getEncadrant().getEmail();
-        String fromAddress = "Your email address";
-        String senderName = "Gestion PFE";
+        String fromAddress = "hafsacherik2000@gmail.com";
+        String senderName = " PFE";
         String subject = "Demande rendez-vous";
         String content = " [[name]],<br>" +
-                "Le groupe [[groupe]] a demandé un rendez-vous,<br> "
-                + "Prière de consulter le lien ci-dessous pour plus d'information  :<br>"
-                + "<h3><a href=\"[[URL]]\" target=\"_self\">Consulter</a></h3>"
-                + "Merci,<br>"
-                + "Gestion PFE.";
+                "Le groupe [[groupe]] demander un rendez-vous,<br> "
+                + "return a votre espace pour conirmer :<br>"
+                + "<h3><a href=\"[[URL]]\" target=\"_self\">return</a></h3>"
+                + "Merci,<br>";
 
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message);
@@ -72,11 +71,7 @@ public class RendezvousService {
         return rr.getMeetingsBySupervisor(supervisorId);
     }
 	
-/*	public Rendezvous updateRendezvous(Rendezvous rdv,Long idG) {
-		Groupe g=gr.findById(idG).get();
-		rdv.setGroupe(g);
-		return rr.save(rdv);
-	}*/
+
 
     public void updaterendezvous(Rendezvous rendezvous, String siteURL)
             throws MessagingException, UnsupportedEncodingException {
@@ -86,15 +81,14 @@ public class RendezvousService {
         for (Etudiant value : etudiant) {
             String email = value.getEmail();
             System.out.println(email);
-            String fromAddress = "Your email address";
-            String senderName = "Gestion PFE";
+            String fromAddress = "hafsacherik2000@gmail.com";
+            String senderName = " PFE";
             String subject = "Rendez-vous";
             String content = " [[name]],<br>" +
-                    "Votre Encadrant Pr. [[encadrant]] a planifier un rendez-vous le [[date]] à [[time]],<br> "
+                    " Encadrant Pr. [[encadrant]]  un rendez-vous le [[date]] à [[time]],<br> "
                     + "Etes-vous disponible  :<br>"
                     + "<h3><a href=\"[[Oui]]\" target=\"_self\">Oui</a>&nbsp;<a href=\"[[Non]]\" target=\"_self\">Non</a></h3>"
-                    + "Merci,<br>"
-                    + "Gestion PFE.";
+                    + "Merci,<br>";
 
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message);
